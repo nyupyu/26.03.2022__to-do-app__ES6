@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ToDoApp</title>
+		<link rel="stylesheet" href="ToDoApp.css" />
+	</head>
+
+	<body>
+		<div class="to-do-app">
+			<div class="to-do-app__textarea-container">
+				<span class="to-do-app__textarea__bg-text to-do-app__textarea__bg-text--active">Dodaj lub wyszukaj zadanie</span>
+				<button class="to-do-app__textarea__btn to-do-app__textarea__clear-btn">
+					<i class="to-do-app__icon fa-solid fa-xmark"></i>
+				</button>
+				<textarea class="to-do-app__textarea" style="resize: none"></textarea>
+				<button class="to-do-app__textarea__btn to-do-app__textarea__add-btn">
+					<i class="to-do-app__icon fa-solid fa-plus"></i>
+				</button>
+				<div class="to-do-app__textarea__tasks-info">
+					<p>
+						Liczba zadań:
+						<span class="to-do-app__textarea__tasks-number"></span>
+					</p>
+					<p>
+						Zakończonych:
+						<span class="to-do-app__textarea__completed-tasks-number"></span>
+					</p>
+				</div>
+			</div>
+			<ul class="to-do-app__list"></ul>
+			<template class="to-do-app__item_temp">
+				<button class="to-do-app__item__btn to-do-app__item__delete-btn"><i class="to-do-app__icon fa-solid fa-xmark"></i></button><span class="to-do-app__item__span"></span
+				><button class="to-do-app__item__btn to-do-app__item__complete-btn"><i class="to-do-app__icon fa-solid fa-check"></i></button>
+			</template>
+		</div>
+		<script type="text/javascript" src="ToDoApp.js"></script>
+		<script src="https://kit.fontawesome.com/799b794d84.js" crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -1,0 +1,183 @@
+body,
+html {
+	background: linear-gradient(145deg, hsl(270, 55%, 27%), hsl(269, 84%, 12%));
+}
+
+body {
+	display: grid;
+	place-items: center;
+	margin: 0;
+	min-height: 100vh;
+	width: 100vw;
+}
+
+.to-do-app *,
+.to-do-app *::before,
+.to-do-app *::after {
+	/* If you have this in reset css, delete this */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+.to-do-app {
+	--clr-bg-dark: hsl(0, 0%, 0%, 0.7);
+	--clr-text-light: hsl(180, 100%, 97%);
+	--clr-bg-light: hsl(180, 100%, 97%, 0.7);
+	--clr-text-dark: hsl(0, 0%, 0%);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: var(--clr-text-light);
+	width: min(500px, 95%);
+	height: 500px;
+	display: grid; /* grid options at the end of this document */
+}
+
+.to-do-app button {
+	display: block;
+	background: none;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+
+.to-do-app__textarea-container {
+	position: relative;
+	display: grid; /* grid options at the end of this document */
+	border-radius: 5px;
+	background: var(--clr-bg-dark);
+}
+
+.to-do-app__textarea {
+	position: relative;
+	z-index: 2;
+	outline: none;
+	border: none;
+	background: transparent;
+	padding: 5px 0;
+}
+
+.to-do-app__textarea::-webkit-scrollbar {
+	width: 0;
+}
+
+.to-do-app__textarea__bg-text {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--clr-bg-light);
+	opacity: 0;
+	transition: all 0.2s linear;
+}
+
+.to-do-app__textarea__bg-text--active {
+	opacity: 1;
+}
+
+.to-do-app__textarea__btn {
+	transition: all 0.2s ease-in-out;
+}
+
+.to-do-app__textarea__btn:active .to-do-app__icon {
+	transform: rotate(360deg);
+}
+
+.to-do-app__textarea__tasks-info {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.to-do-app__list {
+	position: relative;
+	list-style-type: none;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 2px;
+	overflow-y: scroll;
+	padding: 2px 2px;
+}
+
+.to-do-app__list::-webkit-scrollbar {
+	width: 0;
+}
+
+.to-do-app__item {
+	display: grid;
+	place-items: center;
+	min-height: 46px;
+	background: var(--clr-bg-dark);
+	border-radius: 5px;
+	gap: 5px;
+}
+
+.to-do-app__item__span {
+	justify-self: start;
+	align-items: center;
+	word-break: break-all;
+	padding: 5px 0;
+	transition: all 0.2s linear;
+}
+
+.to-do-app__item__span--complete {
+	text-decoration: line-through;
+	color: hsl(180, 0%, 65%);
+}
+
+.to-do-app__icon {
+	color: var(--clr-text-light);
+	transition: all 0.2s ease-in-out;
+	font-size: 1.4rem;
+	pointer-events: none;
+}
+
+/* To do app Grid  */
+.to-do-app {
+	grid-template: 70px 1fr / 1fr;
+}
+/* Textarea Grid */
+.to-do-app__textarea-container {
+	grid-template: 1fr 30px / 30px 1fr 1fr 30px;
+}
+.to-do-app__textarea,
+.to-do-app__textarea__bg-text {
+	grid-area: 1 / 2 / 2 / 4;
+}
+
+.to-do-app__textarea__clear-btn {
+	grid-area: 1 / 1 / 3 / 2;
+}
+
+.to-do-app__textarea__add-btn {
+	grid-area: 1 / 4 / 3 / 5;
+}
+
+.to-do-app__textarea__tasks-info {
+	grid-area: 2 / 2 / 3 / 4;
+}
+
+/* item Grid */
+
+.to-do-app__item {
+	grid-template: 1fr / 30px 1fr 30px;
+}
+.to-do-app__item__delete-btn {
+	grid-area: 1 / 1 / 2 / 2;
+	width: 100%;
+	height: 100%;
+}
+
+.to-do-app__item__span {
+	grid-area: 1 / 2 / 2 / 3;
+}
+
+.to-do-app__item__complete-btn {
+	grid-area: 1 / 3 / 2 / 4;
+	width: 100%;
+	height: 100%;
+}
